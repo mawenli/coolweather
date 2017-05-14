@@ -18,6 +18,7 @@ public class Now {
 
         @SerializedName("txt")
         public String info;
+
     }
 
 

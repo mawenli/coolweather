@@ -26,6 +26,7 @@ public class Utility {
             try {
                 JSONArray allProvinces = new JSONArray(response);
                 for (int i = 0; i < allProvinces.length(); i++) {
+                    //JSONObject provinceObject =  new JSONObject(String.valueOf(allProvinces.getJSONObject(i)));
                     JSONObject provinceObject = allProvinces.getJSONObject(i);
                     Province province = new Province();
                     province.setProvinceName(provinceObject.getString("name"));
@@ -48,7 +49,9 @@ public class Utility {
             try {
                 JSONArray allCities = new JSONArray(response);
                 for (int i = 0; i < allCities.length(); i++) {
+                   // JSONObject cityObject = new JSONObject(String.valueOf(allCities.getJSONObject(i)));
                     JSONObject cityObject = allCities.getJSONObject(i);
+
                     City city = new City();
                     city.setCityName(cityObject.getString("name"));
                     city.setCityCode(cityObject.getInt("id"));
@@ -56,6 +59,7 @@ public class Utility {
                     city.save();
                 }
                 return true;
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -71,7 +75,9 @@ public class Utility {
             try {
                 JSONArray allCounties = new JSONArray(response);
                 for (int i = 0; i < allCounties.length(); i++) {
+                    //JSONObject countyObject = new JSONObject(String.valueOf(allCounties.getJSONObject(i)));
                     JSONObject countyObject = allCounties.getJSONObject(i);
+
                     County county = new County();
                     county.setCountyName(countyObject.getString("name"));
                     county.setWeatherId(countyObject.getString("weather_id"));
