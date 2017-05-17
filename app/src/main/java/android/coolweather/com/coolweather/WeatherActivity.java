@@ -61,7 +61,7 @@ public class WeatherActivity extends AppCompatActivity {
 
     private TextView sportText;
 
-    private ImageView bingPicImage;
+    //private ImageView bingPicImage;
 
     public SwipeRefreshLayout swipeRefresh;
 
@@ -102,6 +102,7 @@ public class WeatherActivity extends AppCompatActivity {
         swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
         swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerLayout.setScrimColor(Color.TRANSPARENT);
         navButton = (Button) findViewById(R.id.nav_button);
 
 
@@ -150,7 +151,7 @@ public class WeatherActivity extends AppCompatActivity {
         });
         String bingPic = prefs.getString("bing_pic",null);
         if (bingPic != null){
-            Glide.with(this).load(bingPic).into(bingPicImage);
+            Glide.with(this).load(bingPic).into(bingPicImg);
 
 
         }else {
